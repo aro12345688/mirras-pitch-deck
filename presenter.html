@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDA Presenter Console - Mirras Dance Academy</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background-color: #090d16;
+      color: #e2e8f0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .header-logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .header-logo span {
+      color: #d4af37;
+    }
+
+    /* Stopwatch Timer */
+    .timer-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px 16px;
+      border-radius: 30px;
+      border: 1px solid #334155;
+    }
+
+    .timer-display {
+      font-family: monospace;
+      font-size: 24px;
+      font-weight: bold;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+
+    .timer-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+    }
+
+    .timer-btn:hover {
+      color: #fff;
+    }
+
+    .timer-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Main Console Area */
+    .console-body {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    /* Notes Pane (Left Side) */
+    .notes-pane {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      border-right: 1px solid #1e293b;
+      overflow-y: auto;
+      background: #0b0f19;
+    }
+
+    .notes-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #d4af37;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .notes-content {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #f1f5f9;
+      font-weight: 400;
+      white-space: pre-wrap;
+    }
+
+    /* Info / Preview Pane (Right Side) */
+    .info-pane {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      gap: 30px;
+      overflow-y: auto;
+    }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .preview-slide-num {
+      font-size: 38px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .preview-slide-title {
+      font-size: 18px;
+      color: #cbd5e1;
+      margin-top: 5px;
+    }
+
+    /* Next Slide Card */
+    .next-slide-card {
+      border-left: 4px solid #d4af37;
+    }
+
+    .next-slide-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Actions Console */
+    .actions-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .jump-selector {
+      width: 100%;
+      background: #0f172a;
+      color: #fff;
+      border: 1px solid #334155;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .jump-selector:focus {
+      border-color: #d4af37;
+    }
+
+    .nav-buttons-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .console-btn {
+      background: #d4af37;
+      color: #000;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+
+    .console-btn:hover {
+      background: #f3e5ab;
+      transform: translateY(-2px);
+    }
+
+    .console-btn.secondary {
+      background: #1e293b;
+      color: #fff;
+      border: 1px solid #334155;
+    }
+
+    .console-btn.secondary:hover {
+      background: #334155;
+    }
+
+    .console-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-logo">MIRRAS <span>PRESENTER CONSOLE</span></div>
+    
+    <!-- Stopwatch -->
+    <div class="timer-container">
+      <!-- Play/Pause -->
+      <button class="timer-btn" id="timerPlayBtn" title="Start Timer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="timerPlayIcon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      </button>
+      <!-- Stopwatch display -->
+      <div class="timer-display" id="timerDisplay">00:00</div>
+      <!-- Reset -->
+      <button class="timer-btn" id="timerResetBtn" title="Reset Timer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="console-body">
+    <!-- Notes Pane -->
+    <div class="notes-pane">
+      <div class="notes-title">Speaker Notes</div>
+      <div class="notes-content" id="notesContent">Loading speaker notes...</div>
+    </div>
+
+    <!-- Info Pane -->
+    <div class="info-pane">
+      <!-- Current Slide info -->
+      <div class="section-card">
+        <div class="section-label">Current Slide</div>
+        <div class="preview-slide-num" id="currentSlideNum">1 / 12</div>
+        <div class="preview-slide-title" id="currentSlideTitle">Cover Slide</div>
+      </div>
+
+      <!-- Next Slide preview -->
+      <div class="section-card next-slide-card">
+        <div class="section-label">Next Slide</div>
+        <div class="next-slide-title" id="nextSlideTitle">Slide Title Placeholder</div>
+      </div>
+
+      <!-- Navigation triggers -->
+      <div class="actions-grid">
+        <div class="section-label">Jump to Slide</div>
+        <select class="jump-selector" id="jumpSelector">
+          <option value="0">Slide 1: Cover</option>
+          <option value="1">Slide 2: Today's Students Need More Than Academics</option>
+          <option value="2">Slide 3: The Challenge Schools Face</option>
+          <option value="3">Slide 4: Our Solution</option>
+          <option value="4">Slide 5: Benefits for Students</option>
+          <option value="5">Slide 6: Benefits for Schools</option>
+          <option value="6">Slide 7: Program Structure</option>
+          <option value="7">Slide 8: International Certification</option>
+          <option value="8">Slide 9: Why Mirras Dance Academy?</option>
+          <option value="9">Slide 10: Student Outcomes</option>
+          <option value="10">Slide 11: School Showcase Event</option>
+          <option value="11">Slide 12: Partner With Us (CTA)</option>
+        </select>
+        
+        <div class="nav-buttons-row">
+          <button class="console-btn secondary" id="consolePrevBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Previous
+          </button>
+          <button class="console-btn" id="consoleNextBtn">
+            Next
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="presenter.js"></script>
+</body>
+</html>

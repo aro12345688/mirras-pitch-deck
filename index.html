@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Hip Hop Dance Certification Program - Mirras Dance Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Main Presentation Shell -->
+  <div class="deck-container">
+    
+    <!-- 16:9 Slide Wrapper (Scaled via JavaScript) -->
+    <div class="slide-wrapper" id="slideWrapper">
+      
+      <!-- Interactive Draw Overlay Canvas -->
+      <canvas class="drawing-canvas" id="drawCanvas"></canvas>
+      
+      <!-- Laser Pointer Indicator -->
+      <div class="laser-pointer-dot" id="laserPointer"></div>
+      
+      <!-- Blackout Overlay -->
+      <div class="blackout-screen" id="blackout"></div>
+
+      <!-- SLIDE 1: Cover -->
+      <section class="slide active" id="slide-1" 
+        data-notes="Welcome the school principal and management team. Introduce Mirras Dance Academy's vision of bringing international standards of hip hop dance education to their esteemed school. Highlight that this program is designed not just for dance steps, but for developing confidence, leadership, and creativity in students.">
+        <div class="cover-layout">
+          <div class="cover-left">
+            <div class="cover-badge">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <span>Global Standard</span>
+            </div>
+            <div class="cover-title-brand">Mirras Dance Academy</div>
+            <h1 class="cover-title-main">International Hip Hop<br>Dance Certification<br>Program</h1>
+            <p class="cover-tagline">Developing Confidence, Creativity & Leadership Through Dance</p>
+            <div class="cover-presenter">
+              <p class="presenter-label">Presented By</p>
+              <p class="presenter-name">Mirras Dance Academy</p>
+              <p class="presenter-sub">Inspiring Confidence Through Dance</p>
+            </div>
+          </div>
+          <div class="cover-right">
+            <img src="assets/hero_cover.png" alt="Diverse students performing on stage" class="cover-hero-img">
+            <div class="cover-img-overlay"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: Why This Program? -->
+      <section class="slide" id="slide-2"
+        data-notes="Explain that academic intelligence is only one facet of growth. Today's students face immense peer pressure, performance anxiety, and sedentary habits. Our curriculum focuses on 6 key development areas: building self-esteem, enhancing physical agility, learning collaborative teamwork, cultivating early leadership, allowing creative self-expression, and providing international certifications to boost global exposure.">
+        <h2 class="slide-title">Today's Students Need <span class="text-highlight">More Than Academics</span></h2>
+        <div class="stats-grid">
+          <!-- Card 1 -->
+          <div class="stat-card glass-panel">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              </div>
+              <span class="stat-badge">01</span>
+            </div>
+            <h3 class="stat-title">Confidence Building</h3>
+            <p class="stat-desc">Stage performance conquers public fear and boosts self-esteem permanently.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="stat-card glass-panel">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              </div>
+              <span class="stat-badge">02</span>
+            </div>
+            <h3 class="stat-title">Physical Fitness</h3>
+            <p class="stat-desc">High-energy hip-hop builds core strength, cardiovascular health, and coordination.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="stat-card glass-panel">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              </div>
+              <span class="stat-badge">03</span>
+            </div>
+            <h3 class="stat-title">Teamwork Skills</h3>
+            <p class="stat-desc">Synchronized group choreography teaches students cooperation and spatial trust.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="stat-card glass-panel">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg>
+              </div>
+              <span class="stat-badge">04</span>
+            </div>
+            <h3 class="stat-title">Leadership</h3>
+            <p class="stat-desc">Peer leadership roles in group formations build commanding team management skills.</p>
+          </div>
+          <!-- Card 5 -->
+          <div class="stat-card glass-panel">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.07 19.58 10.48 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+              </div>
+              <span class="stat-badge">05</span>
+            </div>
+            <h3 class="stat-title">Creative Expression</h3>
+            <p class="stat-desc">Freestyle exercises spark critical problem-solving and unique artistic thinking.</p>
+          </div>
+          <!-- Card 6 -->
+          <div class="stat-card glass-panel">
+            <div class="stat-header">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/></svg>
+              </div>
+              <span class="stat-badge">06</span>
+            </div>
+            <h3 class="stat-title">Global Exposure</h3>
+            <p class="stat-desc">Students measure their talents against global hip hop benchmarks and criteria.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: The Challenge Schools Face -->
+      <section class="slide" id="slide-3"
+        data-notes="Discuss the growing challenges that schools face in student well-being. E.g. screen addiction (phones/tablets), zero outdoor time, lack of creative avenues resulting in stress, and dipping confidence levels. Academics alone can feel monotonous. This is why introducing a holistic developmental activity is a critical priority for premium schools.">
+        <h2 class="slide-title">The Challenge <span class="text-highlight">Schools Face</span></h2>
+        <div class="challenge-layout">
+          <div class="challenge-left">
+            <div class="challenge-item glass-panel">
+              <div class="challenge-emoji">📱</div>
+              <div class="challenge-text-group">
+                <h4>Increased Screen Time</h4>
+                <p>Students spend hours on digital devices, lowering attention spans and social integration.</p>
+              </div>
+            </div>
+            <div class="challenge-item glass-panel">
+              <div class="challenge-emoji">🏃</div>
+              <div class="challenge-text-group">
+                <h4>Reduced Physical Activity</h4>
+                <p>Sedentary lifestyle choices lead to obesity, poor posture, and low physical stamina.</p>
+              </div>
+            </div>
+            <div class="challenge-item glass-panel">
+              <div class="challenge-emoji">🎭</div>
+              <div class="challenge-text-group">
+                <h4>Limited Creative Opportunities</h4>
+                <p>Repetitive academic routines restrict students' unique artistic and emotional self-expression.</p>
+              </div>
+            </div>
+            <div class="challenge-item glass-panel">
+              <div class="challenge-emoji">😟</div>
+              <div class="challenge-text-group">
+                <h4>Low Student Confidence</h4>
+                <p>Lack of group stage exposure leads to fear of public performance and social anxiety.</p>
+              </div>
+            </div>
+            <div class="challenge-item glass-panel">
+              <div class="challenge-emoji">📚</div>
+              <div class="challenge-text-group">
+                <h4>Academic-Only Focus</h4>
+                <p>Exclusively academic assessments overlook holistic developmental needs of modern students.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="challenge-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+
+          <div class="challenge-right">
+            <div class="outcome-goal-card glass-panel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <h3>Need for<br>Holistic<br>Development</h3>
+              <p>An structured, active outlet that refreshes the mind, strengthens the body, and certifies achievements.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Our Solution -->
+      <section class="slide" id="slide-4"
+        data-notes="Our answer is the International Hip Hop Dance Certification. It merges physical training, formal hip hop syllabus, style education, performance skillsets, and ends in a standardized international evaluation. Walk them through the pipeline: student joins, goes through rigorous training, undergoes international audit, resulting in profound personal growth.">
+        <h2 class="slide-title">Our <span class="text-highlight">Solution</span></h2>
+        <div class="solution-layout">
+          <div class="solution-left">
+            <div class="solution-list-item glass-panel">
+              <div class="check-container">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div class="solution-list-text">
+                <h4>Dance Education &amp; Fitness</h4>
+                <p>Authentic foundation-level hip hop syllabus combined with cardiovascular conditioning.</p>
+              </div>
+            </div>
+            <div class="solution-list-item glass-panel">
+              <div class="check-container">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div class="solution-list-text">
+                <h4>Performance Skills</h4>
+                <p>Body language, spatial awareness, and facial expression training for public stages.</p>
+              </div>
+            </div>
+            <div class="solution-list-item glass-panel">
+              <div class="check-container">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div class="solution-list-text">
+                <h4>International Assessment &amp; Growth</h4>
+                <p>External evaluations that certify achievement and build lifelong self-belief.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="solution-right">
+            <div class="pipeline-container glass-panel">
+              <div class="pipeline-step active">
+                <div class="pipeline-node">1</div>
+                <div class="pipeline-content">
+                  <h5>Student</h5>
+                  <p>Individual baseline assessment and goal setting.</p>
+                </div>
+              </div>
+              <div class="pipeline-step">
+                <div class="pipeline-node">2</div>
+                <div class="pipeline-content">
+                  <h5>Structured Training</h5>
+                  <p>10 weeks of progressive style and foundation learning.</p>
+                </div>
+              </div>
+              <div class="pipeline-step">
+                <div class="pipeline-node">3</div>
+                <div class="pipeline-content">
+                  <h5>International Certification</h5>
+                  <p>Formal examination supervised by expert global educators.</p>
+                </div>
+              </div>
+              <div class="pipeline-step">
+                <div class="pipeline-node">4</div>
+                <div class="pipeline-content">
+                  <h5>Holistic Growth</h5>
+                  <p>Highly confident, certified, and physically fitter student.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Benefits for Students -->
+      <section class="slide" id="slide-5"
+        data-notes="Highlight these 4 developmental pillars. Under physical, we build flexibility and stamina. Personal growth focuses on instilling self-discipline and boosting focus. Under social, hip hop routines require precise synchronization, teaching peer support. Finally, global recognition provides them with international certificates that stand out on their future portfolios.">
+        <h2 class="slide-title">Benefits <span class="text-highlight">For Students</span></h2>
+        <div class="pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="pillar-card glass-panel">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>
+            </div>
+            <h3 class="pillar-title">Physical Dev.</h3>
+            <ul class="pillar-bullets">
+              <li>Cardio Fitness</li>
+              <li>Body Coordination</li>
+              <li>Muscle Flexibility</li>
+            </ul>
+          </div>
+          <!-- Pillar 2 -->
+          <div class="pillar-card glass-panel">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.55 2.36-2.2 5.5-3.55 9-3.55V8c-3.5 0-6.64 1.35-9 3.55zM12 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+            </div>
+            <h3 class="pillar-title">Personal Growth</h3>
+            <ul class="pillar-bullets">
+              <li>Self-Confidence</li>
+              <li>Mind Discipline</li>
+              <li>Creative Expression</li>
+            </ul>
+          </div>
+          <!-- Pillar 3 -->
+          <div class="pillar-card glass-panel">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <h3 class="pillar-title">Social Skills</h3>
+            <ul class="pillar-bullets">
+              <li>Team Cooperation</li>
+              <li>Early Leadership</li>
+              <li>Expressive Comm.</li>
+            </ul>
+          </div>
+          <!-- Pillar 4 -->
+          <div class="pillar-card glass-panel">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            </div>
+            <h3 class="pillar-title">Global Recognition</h3>
+            <ul class="pillar-bullets">
+              <li>Int. Certification</li>
+              <li>Global Evaluation</li>
+              <li>Standardized Syllabus</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Benefits for Schools -->
+      <section class="slide" id="slide-6"
+        data-notes="Schools benefit immensely by offering internationally certified extracurriculars. It enhances your portfolio, sets your brand apart in admissions, makes parents highly confident that the school invests in global-level education, and creates spectacular group performances for school events and annual days.">
+        <h2 class="slide-title">Benefits <span class="text-highlight">For Schools</span></h2>
+        <div class="schools-layout">
+          <div class="schools-left">
+            <h3>Elevate Your<br>Extracurricular<br>Portfolio</h3>
+            <p>Our program seamlessly integrates with your school schedule, offering a premium and recognized dance certificate that adds massive branding value to your institution.</p>
+          </div>
+          <div class="schools-right">
+            <div class="advantages-grid">
+              <div class="adv-item glass-panel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Strengthens extracurricular portfolio &amp; school value</span>
+              </div>
+              <div class="adv-item glass-panel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Enhances direct student engagement &amp; activity interest</span>
+              </div>
+              <div class="adv-item glass-panel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Creates outstanding showcase opportunities for annual days</span>
+              </div>
+              <div class="adv-item glass-panel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Builds parent trust and high satisfaction in school standards</span>
+              </div>
+              <div class="adv-item glass-panel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Improves school branding in the competitive admission market</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Program Structure -->
+      <section class="slide" id="slide-7"
+        data-notes="Let's detail the 12-week roadmap. We kick off in Week 1 with a free demo workshop. Week 2 handles onboarding and syllabus introduction. Weeks 3 to 10 are the core training weeks, practicing basic forms and group choreography. In Week 11, we hold a strict mock assessment to give students real feedback. Week 12 features the final certification audit, concluding in a grand certification ceremony.">
+        <h2 class="slide-title">Program <span class="text-highlight">Structure</span></h2>
+        <div class="timeline-wrap">
+          <div class="timeline-line-horizontal"></div>
+          <div class="timeline-nodes">
+            <!-- Node 1 -->
+            <div class="timeline-item">
+              <div class="timeline-label-top">Week 1</div>
+              <div class="timeline-circle">01</div>
+              <div class="timeline-label-bottom">Orientation &amp; Demo Workshop</div>
+            </div>
+            <!-- Node 2 -->
+            <div class="timeline-item">
+              <div class="timeline-label-top">Week 2</div>
+              <div class="timeline-circle">02</div>
+              <div class="timeline-label-bottom">Enrollment &amp; Syllabus Launch</div>
+            </div>
+            <!-- Node 3 -->
+            <div class="timeline-item" style="width: 20%;">
+              <div class="timeline-label-top">Weeks 3-10</div>
+              <div class="timeline-circle">03</div>
+              <div class="timeline-label-bottom">Professional Styles Training</div>
+            </div>
+            <!-- Node 4 -->
+            <div class="timeline-item">
+              <div class="timeline-label-top">Week 11</div>
+              <div class="timeline-circle">04</div>
+              <div class="timeline-label-bottom">Mock Assessment &amp; Feedback</div>
+            </div>
+            <!-- Node 5 -->
+            <div class="timeline-item" style="width: 20%;">
+              <div class="timeline-label-top">Week 12</div>
+              <div class="timeline-circle">05</div>
+              <div class="timeline-label-bottom">International Examination</div>
+            </div>
+            <!-- Node 6 -->
+            <div class="timeline-item">
+              <div class="timeline-label-top">Ceremony</div>
+              <div class="timeline-circle">06</div>
+              <div class="timeline-label-bottom">Certification Ceremony</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: International Certification -->
+      <section class="slide" id="slide-8"
+        data-notes="Every student who completes the audit successfully receives an internationally recognized evaluation sheet and certificate badge. It is graded against global hip hop criteria. This adds concrete validation to their talent. It is a moment of immense pride for both parents and the school when certificates are handed out.">
+        <h2 class="slide-title">International <span class="text-highlight">Certification</span></h2>
+        <div class="cert-layout">
+          <div class="cert-left">
+            <h3>A Prestigious Milestone For Every Dancer</h3>
+            <div class="cert-list">
+              <div class="cert-bullet glass-panel">
+                <div class="cert-bullet-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+                <div class="cert-bullet-text">Standardized Global Evaluation Metrics</div>
+              </div>
+              <div class="cert-bullet glass-panel">
+                <div class="cert-bullet-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <div class="cert-bullet-text">Internationally Validated Physical Certificate</div>
+              </div>
+              <div class="cert-bullet glass-panel">
+                <div class="cert-bullet-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div class="cert-bullet-text">In-depth Technical Performance Feedback</div>
+              </div>
+            </div>
+          </div>
+          <div class="cert-right">
+            <div class="certificate-mockup">
+              <div class="cert-mock-header">
+                <div class="cert-mock-org">Mirras Dance Academy</div>
+                <div class="cert-mock-sub">International Hip Hop Standards</div>
+              </div>
+              <div class="cert-mock-body">
+                <div class="cert-mock-title">CERTIFICATE OF EXCELLENCE</div>
+                <div class="cert-mock-name">This is proudly awarded to</div>
+                <div class="cert-mock-recipient">Alexander Marcus</div>
+              </div>
+              <div class="cert-mock-footer">
+                <div class="cert-sig-block">
+                  <div class="cert-sig-line">Academy Director</div>
+                </div>
+                <div class="cert-seal-mock">
+                  GLOBAL<br>STANDARDS<br>AUDIT
+                </div>
+                <div class="cert-sig-block">
+                  <div class="cert-sig-line">External Auditor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Why Mirras Dance Academy? -->
+      <section class="slide" id="slide-9"
+        data-notes="Why partner with Mirras Dance Academy? We bring a highly experienced faculty of certified hip-hop instructors, a structured age-appropriate syllabus, proven results in student transformations across Chennai, and programs starting from absolute beginners up to advanced levels. We maintain strict class discipline while making it incredibly fun.">
+        <h2 class="slide-title">Why <span class="text-highlight">Mirras Dance Academy?</span></h2>
+        <div class="why-layout">
+          <div class="why-left">
+            <div class="strength-item glass-panel">
+              <div class="strength-num">01</div>
+              <div class="strength-details">
+                <h4>Experienced Faculty</h4>
+                <p>Learn from certified instructors who are experts in youth training and pedagogy.</p>
+              </div>
+            </div>
+            <div class="strength-item glass-panel">
+              <div class="strength-num">02</div>
+              <div class="strength-details">
+                <h4>Structured Curriculum</h4>
+                <p>A age-appropriate graded syllabus that builds complexity step-by-step.</p>
+              </div>
+            </div>
+            <div class="strength-item glass-panel">
+              <div class="strength-num">03</div>
+              <div class="strength-details">
+                <h4>International Standards</h4>
+                <p>Adherence to global evaluation protocols for genuine talent benchmarks.</p>
+              </div>
+            </div>
+            <div class="strength-item glass-panel">
+              <div class="strength-num">04</div>
+              <div class="strength-details">
+                <h4>Proven Student Results</h4>
+                <p>Thousands of confident, certified graduates across Tamil Nadu.</p>
+              </div>
+            </div>
+          </div>
+          <div class="why-right">
+            <img src="assets/instructors.png" alt="Mirras Dance Academy Instructors" class="why-img">
+            <div class="why-label-overlay">
+              <div class="why-label-title">Professional Training Crew</div>
+              <div class="why-label-sub">Mirras Dance Academy Instructors</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Student Outcomes -->
+      <section class="slide" id="slide-10"
+        data-notes="Here is a side-by-side comparison of student progression. Before joining, a student is often hesitant, struggles with public stages, and has limited fitness. After completing the Mirras program, they transform into a confident performer, a strong team player, show massive stamina improvements, and carry a certified credential.">
+        <h2 class="slide-title">Student <span class="text-highlight">Outcomes</span></h2>
+        <div class="outcomes-layout">
+          <!-- Column 1 -->
+          <div class="outcome-column before glass-panel">
+            <div class="outcome-col-header">
+              <div class="outcome-badge">Before Program</div>
+              <h3 class="outcome-col-title">Hesitant &amp; Unsure</h3>
+            </div>
+            <div class="outcome-list">
+              <div class="outcome-item">
+                <div class="outcome-status-icon">✗</div>
+                <span>Shies away from public speaking and performance</span>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-status-icon">✗</div>
+                <span>Struggles to sync or coordinate physical actions</span>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-status-icon">✗</div>
+                <span>Low physical stamina and body posture awareness</span>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-status-icon">✗</div>
+                <span>No portfolio validation for extra-curricular achievements</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Column 2 -->
+          <div class="outcome-column after glass-panel">
+            <div class="outcome-col-header">
+              <div class="outcome-badge">After Program</div>
+              <h3 class="outcome-col-title">Confident Performer</h3>
+            </div>
+            <div class="outcome-list">
+              <div class="outcome-item">
+                <div class="outcome-status-icon">✓</div>
+                <span>Performs boldly and confidently before large audiences</span>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-status-icon">✓</div>
+                <span>Excellent team synchrony and collaborative mindset</span>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-status-icon">✓</div>
+                <span>Significantly improved physical agility, posture, and stamina</span>
+              </div>
+              <div class="outcome-item">
+                <div class="outcome-status-icon">✓</div>
+                <span>International Dance Credential to boost student profiles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: School Showcase Event -->
+      <section class="slide" id="slide-11"
+        data-notes="Our program culminates in a spectacular End-of-Program Showcase. Students perform their synchronized hip hop routines on your stage before parents, teachers, and school board members. It creates a highly memorable event, boosts community engagement, and showcases the high quality of your extracurricular activities.">
+        <h2 class="slide-title">School <span class="text-highlight">Showcase Event</span></h2>
+        <div class="showcase-layout">
+          <div class="showcase-left">
+            <div class="showcase-tagline">Grand Finale</div>
+            <h3 class="showcase-title-main">End-of-Program Showcase</h3>
+            <p class="showcase-desc">Students perform before parents, teachers, and school management to demonstrate their physical growth, rhythmic timing, and teamwork. This creates memorable school events, boosts parent satisfaction, and offers excellent school branding opportunities.</p>
+            <div class="showcase-audience-box">
+              <div class="audience-title">Performances Before</div>
+              <div class="audience-tags">
+                <div class="audience-tag">Parents</div>
+                <div class="audience-tag">Teachers</div>
+                <div class="audience-tag">School Management</div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-right">
+            <img src="assets/showcase.png" alt="Showcase Event Performance" class="showcase-img">
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Updated Final Slide -->
+      <section class="slide" id="slide-12"
+        data-notes="Wrap up your pitch. Present the next step: A Free Demonstration Workshop for students, teachers, and management. It's a risk-free way to see the magic of our curriculum firsthand. Open the floor for questions. Share the contact number: 80560 71515. Thank them for their time.">
+        <h2 class="slide-title">Partner <span class="text-highlight">With Us</span></h2>
+        <div class="cta-layout">
+          <div class="cta-left">
+            <div class="cta-subtitle">Next Action Step</div>
+            <h3 class="cta-headline">Let's Bring International Dance Education To Your School</h3>
+            
+            <div class="cta-grid">
+              <div class="cta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Confidence Building</span>
+              </div>
+              <div class="cta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Leadership Skills</span>
+              </div>
+              <div class="cta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Creativity &amp; Style</span>
+              </div>
+              <div class="cta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Physical Fitness</span>
+              </div>
+              <div class="cta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Teamwork Ethic</span>
+              </div>
+              <div class="cta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Stage Presence</span>
+              </div>
+            </div>
+
+            <div class="cta-quote-box">
+              <p class="cta-quote">"Empowering Students Through Movement, Creativity &amp; Confidence."</p>
+            </div>
+          </div>
+
+          <div class="cta-right">
+            <div class="cta-card glass-panel">
+              <div class="cta-card-badge">Limited Slots</div>
+              <h4 class="cta-card-title">FREE DEMONSTRATION WORKSHOP</h4>
+              <p class="cta-card-sub">For Students, Teachers &amp; School Management</p>
+              
+              <div class="cta-phone-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <div class="cta-phone-num">80560 71515</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Presentation Navigation & Controls Overlay -->
+    <div class="deck-controls-overlay">
+      <div class="controls-left">
+        <div class="brand-overlay-logo">MIRRAS <span>DANCE ACADEMY</span></div>
+        <div class="slide-counter" id="slideCounter">Slide 1 / 12</div>
+      </div>
+      
+      <div class="controls-center">
+        <!-- Prev Button -->
+        <button class="ctrl-btn" id="prevBtn" title="Previous Slide (Left Arrow / Backspace)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        
+        <!-- Progress Bar -->
+        <div class="progress-track">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Next Button -->
+        <button class="ctrl-btn" id="nextBtn" title="Next Slide (Right Arrow / Space / Enter)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="controls-right">
+        <!-- Speaker Notes Button -->
+        <button class="config-btn" id="notesBtn" title="Open Presenter notes view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Notes
+        </button>
+        <!-- Options Button -->
+        <button class="config-btn" id="configBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Controls
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Interactive Config Modal -->
+    <div class="config-modal" id="configModal">
+      <div class="config-title">Theme Settings</div>
+      <div class="theme-options">
+        <div class="theme-opt active sky" data-theme="sky">
+          <div class="theme-dot"></div>
+          <div class="theme-name">Light Sky</div>
+        </div>
+        <div class="theme-opt gold" data-theme="gold">
+          <div class="theme-dot"></div>
+          <div class="theme-name">Gold Obsidian</div>
+        </div>
+        <div class="theme-opt neon" data-theme="neon">
+          <div class="theme-dot"></div>
+          <div class="theme-name">Neon Rhythm</div>
+        </div>
+        <div class="theme-opt navy" data-theme="navy">
+          <div class="theme-dot"></div>
+          <div class="theme-name">Royal Navy</div>
+        </div>
+        <div class="theme-opt slate" data-theme="slate">
+          <div class="theme-dot"></div>
+          <div class="theme-name">Minimal Slate</div>
+        </div>
+      </div>
+
+      <div class="config-title">Presenter Aids</div>
+      <div class="tools-options">
+        <div class="tool-toggle-row">
+          <span>Laser Pointer [L]</span>
+          <label class="switch">
+            <input type="checkbox" id="laserToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="tool-toggle-row">
+          <span>Sketch Pen [P]</span>
+          <label class="switch">
+            <input type="checkbox" id="penToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="tool-toggle-row" style="opacity: 0.7; font-size: 12px; margin-top: 5px;">
+          <span>Fullscreen: [F] &nbsp;&nbsp; Blackout: [B]</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
