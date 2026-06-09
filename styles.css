@@ -116,6 +116,7 @@ body {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,6 +127,7 @@ body {
 .deck-container {
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1812,6 +1814,95 @@ html:active-view-transition-type(backward)::view-transition-new(root) {
   .glass-panel:hover, .cover-badge, .challenge-arrow svg {
     animation: none !important;
     transform: none !important;
+  }
+}
+
+/* ==========================================
+   Print / PDF Styles
+/* --- Mobile Viewport and Orientation Warnings --- */
+.portrait-prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: var(--bg-gradient);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.prompt-content {
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.prompt-content svg {
+  width: 72px;
+  height: 72px;
+  color: var(--accent-color);
+  animation: rotatePhone 2.5s infinite ease-in-out;
+}
+
+.prompt-content h3 {
+  font-family: var(--display-font);
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-heading);
+  letter-spacing: 1px;
+}
+
+.prompt-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@keyframes rotatePhone {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-90deg); }
+}
+
+/* Show only in portrait mode on small screens */
+@media (max-aspect-ratio: 1/1) and (max-width: 900px) {
+  .portrait-prompt {
+    display: flex;
+  }
+}
+
+/* --- Mobile Landscape View Optimizations --- */
+@media (max-width: 900px) {
+  .deck-controls-overlay {
+    height: 48px;
+    padding: 0 15px;
+  }
+  .brand-overlay-logo {
+    display: none; /* Hide brand logo to save horizontal space on mobile */
+  }
+  .slide-counter {
+    font-size: 12px;
+  }
+  .progress-track {
+    width: 120px; /* Make progress bar smaller */
+  }
+  .ctrl-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .config-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+  .slide {
+    padding: 30px 40px; /* Reduce slide padding on mobile so content fits better */
   }
 }
 
